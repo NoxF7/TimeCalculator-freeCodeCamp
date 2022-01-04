@@ -1,7 +1,7 @@
 def add_time(start, duration, day=""):
     [start_time, start_end] = start.split()
 
-    weekdays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saterday", "Sunday"]
+    weekdays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
 
     [start_hour, start_minute] = start_time.split(":")
     [duration_hour, duration_minute] = duration.split(":")
@@ -30,6 +30,7 @@ def add_time(start, duration, day=""):
     new_time = str(new_hour) + ":" + str(new_minute).zfill(2) + " " + new_end
 
     count = 0
+    num = 0
     if day != "":
         for days in weekdays:
             if day.lower() == days.lower():
@@ -46,6 +47,6 @@ def add_time(start, duration, day=""):
     if day_counter == 1:
         new_time = new_time + " (next day)"
     if day_counter > 1:
-        new_time = new_time + " (" + str(day_counter) + " days later)"
+        new_time = new_time + " (" + str(day_counter) + " days later) "
 
     return new_time
